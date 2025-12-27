@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/Englishcours/', // 👈 ОБЯЗАТЕЛЬНО
+  base: '/Englishcours/', // 👈 ОБЯЗАТЕЛЬНО для GitHub Pages
   plugins: [
     react(),
     tailwindcss(),
@@ -13,5 +13,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  build: {
+    outDir: 'dist', // ✅ Явно указываем папку сборки
   },
 })
